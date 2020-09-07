@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Juros Compostos</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="icon" href="./assets/money.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="dark">
+
+  <header>
+    <div class="container">
+
+      <div class="logo">
+        <img src="./assets/money.png" alt="coin">
+        <div>
+          <h1>Juros Compostos</h1>
+          <em>Simples e rápido</em>
+        </div>
+      </div>
+
+      <div class="interrupter">
+        <span>Modo Escuro</span>
+        <div class="toggle">
+          <button></button>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      
+      <form action="">
+
+        <label for="meses">Meses</label>
+        <input id="meses" name="meses" type="number" placeholder="Por quantos meses você quer investir?">
+
+        <label for="inicial">Investimento</label>
+        <input id="inicial" name="inicial" type="number" placeholder="Com quanto dinheiro você quer começar?">
+
+        <label for="aporte">Aporte Mensal</label>
+        <input id="aporte" name="aporte" type="number" placeholder="Quanto você vai colocar de dinheiro por mês?">
+
+        <label for="juros">Juros</label>
+        <input id="juros" name="juros" type="text" placeholder="Qual é o seu ganho estimado em % ?">
+
+        <button type="submit">Qual será o meu ganho?</button>
+
+      </form>
+
+      <h1></h1>
+    </div>
+  </main>
+  
+  <script src="./js/toggleLightMode.js"></script>
+  <script src="./js/juros.js"></script>
+</body>
+</html>

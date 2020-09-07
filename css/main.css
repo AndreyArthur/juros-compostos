@@ -1,0 +1,257 @@
+/* Reseting CSS */
+
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap';
+
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Open Sans';
+
+  box-sizing: border-box;
+
+  outline: 0;
+}
+
+html, body {
+  height: 100%;
+
+  font-size: 1.6rem;
+}
+
+body.light {
+  --toggle: #aeb3cb;
+  --background: #ffffff;
+  --text-primary: #1e202a;
+  --text-secondary: #63687e;
+  --border: #d6d6d6;
+
+  background-color: var(--background);
+}
+
+body.dark {
+  --toggle: #378fe6;
+  --background: #1e202a;
+  --text-primary: #ffffff;
+  --text-secondary: #8b97c6;
+  --border: #d6d6d6;
+
+  background-color: var(--background);
+}
+
+h1, h2, h3, h4, h5, h6, label {
+  color: var(--text-primary);
+}
+
+p, small, span, em {
+  color: var(--text-secondary);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.container {
+  max-width: 1080px;
+
+  padding: 0 3%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 55%;
+  }
+
+  @media (max-width: 500px) {
+    :root {
+      font-size: 50%;
+    }
+
+    @media (max-width: 450px) {
+      :root {
+        font-size: 45%;
+      }
+
+      @media (max-width: 400px) {
+        :root {
+          font-size: 37%;
+        }
+
+        @media (max-width: 330px) {
+          :root {
+            font-size: 30%;
+          }
+
+          @media (max-width: 280px) {
+            :root {
+              font-size: 25%;
+            }
+
+            @media (max-width: 230px) {
+              :root {
+                font-size: 20%;
+              }
+            }
+
+            @media (max-width: 190px) {
+              :root {
+                font-size: 15%;
+              }
+            }
+
+            @media (max-width: 160px) {
+              :root {
+                font-size: 10%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Styles */
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 10rem;
+}
+
+header .container .logo {
+  display: flex;
+}
+
+header .container .logo img {
+  width: 6rem;
+  height: 6rem;
+
+  margin-right: 2rem;
+  margin-top: 0.6rem;
+}
+
+header .container .logo em {
+  display: block;
+}
+
+header .container .interrupter {
+  display: flex;
+}
+
+header .container .interrupter .toggle {
+  width: 6rem;
+  height: 2rem;
+
+  border-radius: 1rem;
+  
+  margin-left: 1rem;
+  
+  background-color: var(--toggle);
+
+  cursor: pointer;
+}
+
+header .container .interrupter .toggle button {
+  width: 1.7rem;
+  height: 1.7rem;
+
+  position: relative;
+  top: 0.1rem;
+  left: 0.2rem;
+
+  border-radius: 0.9rem;
+  border: 0;
+  
+  background-color: var(--background);
+
+  cursor: pointer;
+}
+
+header .container .interrupter .toggle button.light {
+  animation: slideRight 400ms ease both; 
+}
+
+@keyframes slideRight {
+  from {
+    left: 0.2rem;
+  } 
+
+  to {
+    left: 4.1rem;
+  }
+}
+
+header .container .interrupter .toggle button.dark {
+  animation: slideLeft 400ms ease both; 
+}
+
+@keyframes slideLeft {
+  from {
+    left: 4.1rem;
+  } 
+  
+  to {
+    left: 0.2rem;
+  }
+}
+
+main .container form {
+  display: flex;
+  flex-direction: column;
+}
+
+main .container form label {
+  margin: 1rem 0 1rem 1rem;
+}
+
+main .container form input {
+  height: 5rem;
+
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 1.5rem;
+  border: 0.2rem solid var(--border);
+
+  font-size: 1.8rem;
+}
+
+main .container form button {
+  width: 30rem;
+  height: 5rem;
+
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+
+  margin-top: 2rem;
+  border: var(--border);
+  border-radius: 1.5rem;
+
+  background-color: var(--toggle);
+
+  font-size: 1.6rem;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+main .container h1 {
+  margin-top: 2rem;
+
+  text-align: center;
+}
