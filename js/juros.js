@@ -1,36 +1,65 @@
-/*function jurosCompostos(event, meses, inicial, aporte, juros) {
-  meses = document.getElementById('meses').value;
-  inicial = document.getElementById('inicial').value;
-  aporte = document.getElementById('aporte').value;
-  juros = document.getElementById('juros').value;
+function masks() {
+  const masks =  {
+    meses (value) {
+      return value
+      .replace(/[!-/]/, '')
+      .replace(/[:-²]/, '')
+    },
 
-  for(let i = 1; i <= meses; i++) {
-    inicial = (inicial * juros) + aporte;
+    inicial (value) {
+      return value
+      .replace(/[!-+]/, '')
+      .replace(/[-]/, '')
+      .replace(/[/]/, '')
+      .replace(/[:-²]/, '')
+      .replace(',', '.')
+    },
+
+    aporte (value) {
+      return value
+      .replace(/[!-+]/, '')
+      .replace(/[-]/, '')
+      .replace(/[/]/, '')
+      .replace(/[:-²]/, '')
+      .replace(',', '.')
+    },
+
+    juros (value) {
+      return value
+      .replace(/[!-+]/, '')
+      .replace(/[-]/, '')
+      .replace(/[/]/, '')
+      .replace(/[:-²]/, '')
+      .replace(/$/, '%')
+      .replace(',', '.')
+    }
   }
 
-  const inicialFormated = Number(inicial).toFixed(2)
-  console.log(`og${inicialFormated}`);
+  document.querySelectorAll('input').forEach( ($input) => {
+    const field = $input.dataset.js;
+  
+    $input.addEventListener('input', event => {
+      event.target.value = masks[field](event.target.value);
+    }, false)
+  })
 }
-*/
 
-document.querySelector('form').addEventListener('submit', (event, meses, aporte, inicial, juros) => {
-  meses = document.getElementById('meses').value;
-  inicial = document.getElementById('inicial').value;
+masks();
+
+
+document.querySelector('form').addEventListener('submit', jurosCompostos);
+
+function jurosCompostos(event, meses, inicial, aporte, juros) {
+  meses = Number(document.getElementById('meses').value);
+  inicial = Number(document.getElementById('inicial').value);
   aporte = Number(document.getElementById('aporte').value);
-
-  if (document.getElementById('juros').value.indexOf('%') > -1) {
-    const jurosN = document.getElementById('juros').value.replace('%', '');
-    juros = 1 + (Number(jurosN) / 100);
-  } else  {
-    juros = 1 + (Number(document.getElementById('juros').value) / 100);
-  }
+  juros = 1 + (Number(document.getElementById('juros').value.replace('%', '')) / 100);
 
   for(let i = 1; i <= meses; i++) {
     inicial = (inicial * juros) + aporte;
   }
 
-  const inicialFormatada = Number(inicial).toFixed(2);
-  document.querySelector('main h1').innerHTML=`R$${inicialFormatada}`;
+  document.querySelector('main h1').innerHTML=`R$${inicial.toFixed(2)}`;
 
   event.preventDefault();
-});
+}

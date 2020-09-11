@@ -6,6 +6,10 @@
   <link rel="icon" href="./assets/money.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Um site simples para você fazer o seu cálculo de juros composotos sem enrolação.">
+  <meta name="keywords" content="juros, juros compostos, compostos, economia, simples, cauculo, dinheiro, contas">
+  <meta name="author" content="Andrey Arthur">
 </head>
 <body class="dark">
 
@@ -36,16 +40,16 @@
       <form action="">
 
         <label for="meses">Meses</label>
-        <input id="meses" name="meses" type="number" placeholder="Por quantos meses você quer investir?">
+        <input id="meses" data-js="meses" name="meses" type="text" placeholder="Por quantos meses você quer investir?">
 
         <label for="inicial">Investimento</label>
-        <input id="inicial" name="inicial" type="number" placeholder="Com quanto dinheiro você quer começar?">
+        <input id="inicial" data-js="inicial" name="inicial" type="text" placeholder="Com quanto dinheiro você quer começar?">
 
         <label for="aporte">Aporte Mensal</label>
-        <input id="aporte" name="aporte" type="number" placeholder="Quanto você vai colocar de dinheiro por mês?">
+        <input id="aporte" data-js="aporte" name="aporte" type="text" placeholder="Quanto você vai colocar de dinheiro por mês?">
 
         <label for="juros">Juros</label>
-        <input id="juros" name="juros" type="text" placeholder="Qual é o seu ganho estimado em % ?">
+        <input id="juros" data-js="juros" name="juros" type="text" placeholder="Qual é o seu ganho estimado em % ?">
 
         <button type="submit">Qual será o meu ganho?</button>
 
